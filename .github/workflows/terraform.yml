@@ -114,7 +114,9 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init -backend="${BACKEND}"
+        env:
+          BACKEND: ${{ !github.event.pull_request.head.repo.fork }}
 
       - name: Terraform Validate
         id: validate
@@ -127,6 +129,7 @@ jobs:
           args: ${{ matrix.workspace }}
 
       - name: Terraform Plan
+        if: '!github.event.pull_request.head.repo.fork'
         id: plan
         run: terraform plan -detailed-exitcode
         continue-on-error: true

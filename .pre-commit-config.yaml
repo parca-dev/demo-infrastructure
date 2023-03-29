@@ -1,0 +1,24 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.77.1
+  hooks:
+  - id: terraform_fmt
+    args:
+    - --args=-diff
+  - id: terraform_validate
+    args:
+    - --init-args=-lockfile=readonly
+  ## This hook do not work well with Renovate
+  ## https://github.com/renovatebot/renovate/discussions/11821
+  # - id: terraform_providers_lock
+  #   args:
+  #   - --args=-platform=linux_amd64
+  - id: terraform_tflint
+    args:
+    - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
+    - --args=--module

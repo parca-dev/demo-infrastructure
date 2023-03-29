@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>parca-dev/.github"],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "terraform-module",
+        "terraform-provider"
+      ],
+      "automerge": false,
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["hashicorp/terraform"],
+      "automerge": false,
+      "semanticCommitType": "build"
+    }
+  ]
+}

@@ -4,9 +4,9 @@ Demo Infrastructure resources managed by Terraform.
 
 ## Scaleway
 
-**Workspaces**:
+**Workspaces:**
 
-* [demo-infrastructure-scaleway]https://app.terraform.io/app/parca-dev/workspaces/demo-infrastructure-scaleway)
+* [demo-infrastructure-scaleway](https://app.terraform.io/app/parca-dev/workspaces/demo-infrastructure-scaleway)
 
 ## Backend
 

@@ -2,6 +2,12 @@
 
 Demo Infrastructure resources managed by Terraform.
 
+## Scaleway
+
+**Workspaces**:
+
+* [demo-infrastructure-scaleway]https://app.terraform.io/app/parca-dev/workspaces/demo-infrastructure-scaleway)
+
 ## Backend
 
-[`remote` backends](https://developer.hashicorp.com/terraform/language/settings/backends/remote) are used, you will need to run `terraform login` to authenticate with Terraform Cloud.
+[`cloud` backends](https://developer.hashicorp.com/terraform/cli/cloud/settings) are used, you will need to run `terraform login` to authenticate with Terraform Cloud.

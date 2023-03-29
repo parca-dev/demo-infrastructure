@@ -131,7 +131,7 @@ jobs:
       - name: Terraform Plan
         if: '!github.event.pull_request.head.repo.fork'
         id: plan
-        run: terraform plan -detailed-exitcode
+        run: terraform plan -detailed-exitcode -out=tfplan
         continue-on-error: true
 
       - name: Comment on pull request
@@ -241,4 +241,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve tfplan

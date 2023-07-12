@@ -31,10 +31,10 @@ resource "civo_kubernetes_cluster" "demo" {
   }
 }
 
-resource "civo_kubernetes_node_pool" "g3s_kube_medium" {
+resource "civo_kubernetes_node_pool" "g4s_kube_medium" {
   cluster_id = civo_kubernetes_cluster.demo.id
-  label      = "g3s-kube-medium"
+  label      = "g4s-kube-medium"
   node_count = 2
-  size       = "g3s.kube.medium"
+  size       = "g4s.kube.medium"
   region     = "FRA1"
 }

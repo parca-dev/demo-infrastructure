@@ -1,3 +1,12 @@
+resource "scaleway_vpc" "parca_demo" {
+  name = "parca-demo"
+}
+
+resource "scaleway_vpc_private_network" "parca_demo" {
+  name   = "parca-demo"
+  vpc_id = scaleway_vpc.parca_demo.id
+}
+
 resource "scaleway_k8s_cluster" "parca_demo" {
   name                        = "parca-demo"
   type                        = "kapsule"
@@ -28,6 +37,8 @@ resource "scaleway_k8s_cluster" "parca_demo" {
   feature_gates       = []
   admission_plugins   = []
   apiserver_cert_sans = []
+
+  private_network_id = scaleway_vpc_private_network.parca_demo.id
 
   tags = []
 }

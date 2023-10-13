@@ -66,3 +66,7 @@ resource "scaleway_k8s_pool" "parca_demo_pool_gp1_xs" {
 
   tags = []
 }
+
+resource "scaleway_object_bucket" "parca_analytics" {
+  name = "parca-analytics"
+}

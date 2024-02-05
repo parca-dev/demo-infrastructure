@@ -124,7 +124,7 @@ jobs:
 
       - name: Terraform Lint
         id: lint
-        uses: docker://ghcr.io/terraform-linters/tflint:v0.50.2@sha256:cdfc47735680213999e960fc547fa74f8508e273ef6e72a50c9860b433a25058
+        uses: docker://ghcr.io/terraform-linters/tflint:v0.50.3@sha256:a343c9b9710735c99154faef718f3df7fef1f1bdcc33c3d4b6d8e44ff219c47e
         with:
           args: --chdir=${{ matrix.workspace }}
 

@@ -11,7 +11,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ ! (github.ref == 'refs/heads/main' && github.event_name == 'push') }}
 
 env:
   # renovate: datasource=github-releases depName=hashicorp/terraform versioning=hashicorp extractVersion=^v(?<version>.+)$

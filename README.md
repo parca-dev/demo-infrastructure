@@ -2,12 +2,6 @@
 
 Demo Infrastructure resources managed by Terraform.
 
-## Civo
-
-**Workspaces:**
-
-* [demo-infrastructure-civo](https://app.terraform.io/app/parca-dev/workspaces/demo-infrastructure-civo)
-
 ## Scaleway
 
 **Workspaces:**

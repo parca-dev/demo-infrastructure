@@ -11,15 +11,16 @@ repos:
     args:
     - --args=-diff
   - id: terraform_validate
+  - id: terraform_providers_lock
     args:
-    - --init-args=-lockfile=readonly
-  ## This hook do not work well with Renovate
-  ## https://github.com/renovatebot/renovate/discussions/11821
-  # - id: terraform_providers_lock
-  #   args:
-  #   - --args=-platform=linux_amd64
+    - --hook-config=--mode=only-check-is-current-lockfile-cross-platform
+    - --args=-platform=darwin_amd64
+    - --args=-platform=darwin_arm64
+    - --args=-platform=linux_amd64
+    - --args=-platform=linux_arm64
+    - --args=-platform=windows_amd64
   - id: terraform_tflint
     args:
     - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
-    - --args=--module
+    - --args=--fix
     - --hook-config=--delegate-chdir

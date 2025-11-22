@@ -43,30 +43,6 @@ resource "scaleway_k8s_cluster" "parca_demo" {
   tags = []
 }
 
-resource "scaleway_k8s_pool" "parca_demo_pool_dev1_m" {
-  cluster_id = scaleway_k8s_cluster.parca_demo.id
-  name       = "pool-dev1-m"
-  node_type  = "dev1_m"
-  size       = "1"
-  min_size   = "1"
-  max_size   = "1"
-
-  autohealing       = true
-  autoscaling       = false
-  container_runtime = "containerd"
-
-  kubelet_args = {}
-
-  upgrade_policy {
-    max_surge       = 0
-    max_unavailable = 1
-  }
-
-  wait_for_pool_ready = false
-
-  tags = []
-}
-
 resource "scaleway_k8s_pool" "parca_demo_pool_gp1_xs" {
   cluster_id = scaleway_k8s_cluster.parca_demo.id
   name       = "pool-gp1-xs"

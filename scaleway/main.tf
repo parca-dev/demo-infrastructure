@@ -11,7 +11,7 @@ resource "scaleway_k8s_cluster" "parca_demo" {
   name                        = "parca-demo"
   type                        = "kapsule"
   description                 = ""
-  version                     = "1.31"
+  version                     = "1.33"
   cni                         = "cilium"
   delete_additional_resources = false
 

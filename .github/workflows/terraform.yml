@@ -15,7 +15,7 @@ concurrency:
 
 env:
   # renovate: datasource=github-releases depName=hashicorp/terraform versioning=hashicorp extractVersion=^v(?<version>.+)$
-  TERRAFORM_VERSION: 1.14.0
+  TERRAFORM_VERSION: 1.14.5
 
 jobs:
   pre-job:
